@@ -84,8 +84,62 @@ class Date:
         return self
 
 #Test
-d = Date(4, 31, 2012)
-print(d.tomorrow())
+#d = Date(4, 31, 2012)
+#print(d.tomorrow())
+
+#This should change the calling object so it represents
+#one calendar day before the date it represented
+
+    def yesterday(self):
+        #leap year cases
+        if self.isLeapYear():
+            fdays = 29
+        else:
+            fdays = 28
+        dim = [0,31,fdays,31,30,31,30,31,31,30,31,30,31]
+
+        #user error
+        if self.day > dim[self.month] or self.month > 12:
+            return "Invalid Entry"
+
+        #conditions for special cases
+        if self.day == 1 and self.month == 1:
+            self.day = 31
+            self.month = 12
+            self.year -= 1
+
+        elif self.day == 1:
+            self.day = dim[self.month - 1]
+            self.month -= 1
+
+        #regular cases
+        else:
+            self.day -= 1
+        return self
+
+    def addNdays(self, N):
+        #self is the instance of the class that you make
+        #user error
+        if N < 0:
+            return "Invalid Input: N must be non-negative"
+        #normal
+        for i in range(0,N):
+            print(self)
+            self.tomorrow()
+        print(self)
+
+    def subNDays(self, N):
+        #user error
+        if N < 0:
+            return "Invalid Input: N must be non-negative"
+
+        for i in range(0,N):
+            self.yesterday()
+        print(self)
+
+    def isBefore(self, d2):
+
+
 
 
 
