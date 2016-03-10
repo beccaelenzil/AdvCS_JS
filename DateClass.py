@@ -137,7 +137,53 @@ class Date:
             self.yesterday()
         print(self)
 
-    def isBefore(self, d2):
+    def isBefore(self, d2): #returns true if d is before d2;
+#if equal, return false, if d(self) is after d2, return false
+
+#check year first-- if not different,
+#check month-- if month not different,
+#check day, if dday is same, return false
+        if d2.year > self.year:
+            return True
+        elif d2.year < self.year:
+            return False
+        else:
+            if d2.month > self.month:
+                return True
+            elif d2.month < self.month:
+                return False
+            else:
+                if d2.day > self.day:
+                    return True
+                else:
+                    return False
+
+    def isAfter(self, d2):
+#should return TRUE if d(self) is AFTER d2
+#if d-year is > d2-year, return TRUE, elif, less than, false, else, go on
+        if self.year > d2.year:
+            return True
+        elif self.year < d2.year:
+            return False
+        else:
+            if self.month > d2.month:
+                return True
+            elif self.month < d2.month:
+                return False
+            else:
+                if self.day < d2.month:
+                    return True
+                else:
+                    return False
+
+#Test
+#d = Date(1, 1, 2016)
+#d2 = Date(12, 11, 2015)
+#a = d.isAfter(d2)
+#print(a)
+    def diff(self, d2):
+#returns an integer represented number of days between d(self) and d2
+        while
 
 
 
