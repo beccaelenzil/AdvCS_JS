@@ -171,22 +171,46 @@ class Date:
             elif self.month < d2.month:
                 return False
             else:
-                if self.day < d2.month:
+                if self.day > d2.day:
                     return True
                 else:
                     return False
 
-#Test
-#d = Date(1, 1, 2016)
-#d2 = Date(12, 11, 2015)
-#a = d.isAfter(d2)
-#print(a)
+
     def diff(self, d2):
 #returns an integer represented number of days between d(self) and d2
-        while
+        count = 0
+        selfcopy = self.copy()
+        d2copy = d2.copy()
+        if self.isAfter(d2): #need to go from d2
+            while not selfcopy.equals(d2copy):
+                d2copy.tomorrow()
+                count += 1
 
+        else:
+            while not selfcopy.equals(d2copy):
+                selfcopy.tomorrow()
+                count -= 1
+        return count
 
+    def dow(self):
+        knowndate = Date(11, 12, 2014) #it's a Wednesday
+        differ = self.diff(knowndate) #returns difference in number of days
+        remainder = differ % 7
+        lis = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"]
+        dayofweek = lis[remainder]
+        return dayofweek
 
+#a = Date(1, 1, 1027)
+#a2 = Date(3, 28, 1027)
+#print(a.diff(a2))
+#print(a2.diff(a))
 
+#Test
+#d = Date(1, 1, 2016)
+#d2 = Date(1, 11, 2016)
+#a = d.isAfter(d2)
+#print(a)
 
-
+#d = Date(11, 10, 2014)
+#print(d.dow())
