@@ -2,7 +2,7 @@
 #
 # Problem Set 1, Problem 1: Dates
 
-
+import time
 class Date:
     """ a user-defined data structure that
         stores and manipulates dates
@@ -82,10 +82,6 @@ class Date:
         else:
             self.day += 1
         return self
-
-#Test
-#d = Date(4, 31, 2012)
-#print(d.tomorrow())
 
 #This should change the calling object so it represents
 #one calendar day before the date it represented
@@ -179,6 +175,7 @@ class Date:
 
     def diff(self, d2):
 #returns an integer represented number of days between d(self) and d2
+        t0 = time.clock()
         count = 0
         selfcopy = self.copy()
         d2copy = d2.copy()
@@ -191,6 +188,8 @@ class Date:
             while not selfcopy.equals(d2copy):
                 selfcopy.tomorrow()
                 count -= 1
+        t1 = time.clock()
+        print(t1-t0)
         return count
 
     def dow(self):
@@ -200,6 +199,7 @@ class Date:
         lis = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"]
         dayofweek = lis[remainder]
         return dayofweek
+
 
 #a = Date(1, 1, 1027)
 #a2 = Date(3, 28, 1027)
@@ -214,3 +214,4 @@ class Date:
 
 #d = Date(11, 10, 2014)
 #print(d.dow())
+
