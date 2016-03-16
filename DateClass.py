@@ -125,6 +125,7 @@ class Date:
         print(self)
 
     def subNDays(self, N):
+        #subtracts number of days N
         #user error
         if N < 0:
             return "Invalid Input: N must be non-negative"
@@ -133,7 +134,7 @@ class Date:
             self.yesterday()
         print(self)
 
-    def isBefore(self, d2): #returns true if d is before d2;
+    def isBefore(self, d2): #returns true if d (entered number) is before d2;
 #if equal, return false, if d(self) is after d2, return false
 
 #check year first-- if not different,
@@ -174,7 +175,7 @@ class Date:
 
 
     def diff(self, d2):
-#returns an integer represented number of days between d(self) and d2
+#returns an integer represented number of days between d(self)-- entered number and d2
         t0 = time.clock()
         count = 0
         selfcopy = self.copy()
@@ -193,6 +194,7 @@ class Date:
         return count
 
     def dow(self):
+        #returns day of week of entered date
         knowndate = Date(11, 12, 2014) #it's a Wednesday
         differ = self.diff(knowndate) #returns difference in number of days
         remainder = differ % 7

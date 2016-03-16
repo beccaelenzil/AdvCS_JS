@@ -24,6 +24,10 @@ class Board:
             s += '|'
             for col in range(0,W):
                 s += self.data[row][col] + '|'
+                #self.data is list of lists; row gives corresponding row
+                #col gives on item in column position in row
+                #ex: [3][4] gives fourth item in column 3
+                #self.data[1] is a list that corresponds to second row
             s += '\n'
 
         s += (2*W+1) * '-'    # bottom of the board
@@ -33,10 +37,73 @@ class Board:
             s += " " + str(col)
         return s       # the board is complete, return it
 
-    def addMove(self, col, ox):
-        for col in range(0, W+1):
-           if self.data == True:
-               print("h")
 
-d = Board(6, 7)
-print(d.addMove)
+    def addMove(self, col, ox):
+        for row_index in range(self.height-1, -1, -1):
+            if self.data[row_index][col] == " ": #if self.data is empty
+                self.data[row_index][col] = ox
+                break
+
+
+#find position using self.data: holds the board
+
+
+    def clear(self):
+        for row_index in range(0, self.height):
+            for col in range(0, self.width):
+                self.data[row_index][col] = " "
+
+    def setBoard( self, moveString ):
+        """ takes in a string of columns and places
+            alternating checkers in those columns,
+            starting with 'X'
+
+            For example, call b.setBoard('012345')
+            to see 'X's and 'O's alternate on the
+            bottom row, or b.setBoard('000000<--columns') to
+            see them alternate in the left column.
+
+            moveString must be a string of integers
+        """
+        nextCh = 'X'   # start by playing 'X'
+        for colString in moveString:
+            col = int(colString)
+            if 0 <= col <= self.width:
+                self.addMove(col, nextCh)
+            if nextCh == 'X': nextCh = 'O'
+            else: nextCh = 'X'
+
+    def allowsMove(self, c): #checks that column isnt totally full
+    #also makes sure legal col size
+        if c >= self.width or c < 0:
+            return False
+        else:
+            return self.data[0][c] == " " #if full, returns False since not true
+
+    def isFull(self):
+#returns True if object is completely full, returns False otherwise
+        for col in range(0, self.width):
+            if self.allowsMove(col): #checks all columns, if any are not full,
+            #return False
+            #can only get past if haven't returned false, which happens if all full
+            #ergo, all full
+                return False
+        return True
+
+    def delMove(self, c):
+#removes top checker from column c
+#If column is empty, then delMove does nothing
+        #for col in range(0, self.width):
+        for row_index in range(0, self.height):
+            if self.data[row_index][c] != " ":
+                self.data[row_index][c] = 0
+
+
+
+
+d = Board(2, 2)
+d.setBoard('0011')
+d.delMove(1)
+d.delMove(1)
+d.delMove(1)
+d.delMove(0)
