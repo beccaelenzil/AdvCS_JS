@@ -44,9 +44,7 @@ class Board:
                 self.data[row_index][col] = ox
                 break
 
-
 #find position using self.data: holds the board
-
 
     def clear(self):
         for row_index in range(0, self.height):
@@ -84,7 +82,7 @@ class Board:
 #returns True if object is completely full, returns False otherwise
         for col in range(0, self.width):
             if self.allowsMove(col): #checks all columns, if any are not full,
-            #return False
+            #returns False
             #can only get past if haven't returned false, which happens if all full
             #ergo, all full
                 return False
@@ -94,16 +92,30 @@ class Board:
 #removes top checker from column c
 #If column is empty, then delMove does nothing
         #for col in range(0, self.width):
-        for row_index in range(0, self.height):
+        for row_index in range(0, self.height): #go down from top
             if self.data[row_index][c] != " ":
+                self.data[row_index][c] = " "
+                break
+
+
+    def winsFor(self, ox):
+#returns True if four checkers of same kind in a row
+#returns True if four checks of same kind in a column
+#returns True if four checks of same kind in a diagonal x2 (2 ways)
+#Otherwise, returns false
+        H = self.height
+        W = self.width
+        D = self.data
+        for row_index in range(0, self.height):
+            for col in range(0, self.width-3):#for horizonal wins; -3 makes sure it doesnt go out of bounds
+                if D[row_index][col] == ox and \
+                    D[row_index][col+1] == ox and \
+                    D[row_index][col+2] == ox and \
+                    D[row_index][col+3] == ox:
+                        return True
+        for row_index in range(0, self.height-3):
 
 
 
-
-d = Board(2, 2)
-d.setBoard('0011')
-d.delMove(1)
-d.delMove(1)
-d.delMove(1)
-d.delMove(0)
-print(d)
+#d = Board(2, 2)
+#d.setBoard('0011')
