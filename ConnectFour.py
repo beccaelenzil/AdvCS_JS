@@ -96,7 +96,6 @@ class Board:
         #for col in range(0, self.width):
         for row_index in range(0, self.height):
             if self.data[row_index][c] != " ":
-                self.data[row_index][c] = 0
 
 
 
@@ -107,3 +106,4 @@ d.delMove(1)
 d.delMove(1)
 d.delMove(1)
 d.delMove(0)
+print(d)
