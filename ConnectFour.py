@@ -97,7 +97,6 @@ class Board:
                 self.data[row_index][c] = " "
                 break
 
-
     def winsFor(self, ox):
 #returns True if four checkers of same kind in a row
 #returns True if four checks of same kind in a column
@@ -113,9 +112,35 @@ class Board:
                     D[row_index][col+2] == ox and \
                     D[row_index][col+3] == ox:
                         return True
-        for row_index in range(0, self.height-3):
 
+        for col in range(0, self.width):#for vertical
+            for row_index in range(0, self.height-3):
+                if D[row_index][col] == ox and \
+                    D[row_index+1][col] == ox and \
+                    D[row_index+2][col] == ox and \
+                    D[row_index+3][col] == ox:
+                        return True
 
+        for col in range(0, self.width-3): #starting at (0,0)-- upper left corner
+            for row_index in range(0, self.height-3):
+                if self.data[row_index][col] == ox and \
+                self.data[row_index+1][col+1] == ox and \
+                self.data[row_index+2][col+2] == ox and \
+                self.data[row_index+3][col+3] == ox:
+                    return True
 
-#d = Board(2, 2)
-#d.setBoard('0011')
+        for col in range(3, self.width): #starting at (3,0)-- upper right middle
+            for row_index in range(0, self.height-3):
+                if self.data[row_index][col] == ox and \
+                self.data[row_index+1][col-1] == ox and \
+                self.data[row_index+2][col-2] == ox and \
+                self.data[row_index+3][col-3] == ox:
+                    return True
+
+        return False
+
+#d = Board(7, 6)
+#d.setBoard("65543443323")
+#print(d)
+#print(d.winsFor('O'))
+
