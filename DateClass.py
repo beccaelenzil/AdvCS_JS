@@ -113,7 +113,7 @@ class Date:
             self.day -= 1
         return self
 
-    def addNdays(self, N):
+    def addNDays(self, N):
         #self is the instance of the class that you make
         #user error
         if N < 0:
