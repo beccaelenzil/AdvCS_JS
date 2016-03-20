@@ -33,7 +33,7 @@ class Board:
         s += (2*W+1) * '-'    # bottom of the board
         s += "\n"
         count = 0
-        for col in range(1, W+1):
+        for col in range(0, W):
             s += " " + str(col)
         return s       # the board is complete, return it
 
@@ -102,8 +102,6 @@ class Board:
 #returns True if four checks of same kind in a column
 #returns True if four checks of same kind in a diagonal x2 (2 ways)
 #Otherwise, returns false
-        H = self.height
-        W = self.width
         D = self.data
         for row_index in range(0, self.height):
             for col in range(0, self.width-3):#for horizonal wins; -3 makes sure it doesnt go out of bounds
@@ -143,4 +141,39 @@ class Board:
 #d.setBoard("65543443323")
 #print(d)
 #print(d.winsFor('O'))
+
+    def hostGame(self):
+#ask for user input on column
+#alternate between X and O for actions
+#whileTrue: if not winsFor?
+#at end, check winsFor
+        nextChar = "X"
+        while True:
+            print(self)
+            person_col = -1
+            while self.allowsMove(person_col) == False:
+                person_col = input("It's "+ nextChar + "'s turn. Enter a column: ")
+                person_col = int(person_col)
+            self.addMove(person_col, nextChar)   #adds character to board
+            if self.winsFor(nextChar): #if char has won
+                print(self)
+                print(nextChar + " has won!")
+                break
+            if self.isFull():
+                print("The board is full. Game is over.")
+                break
+            if nextChar == "X":
+                nextChar = "O"
+            else:
+                nextChar = "X"
+
+d = Board(7, 6)
+d.hostGame()
+
+
+
+
+
+
+
 
