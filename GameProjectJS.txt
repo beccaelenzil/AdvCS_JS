@@ -2,6 +2,7 @@ Game: Tic-Tac-Toe
 
 Game Play (How the code works):
 General class is Board
-print out board
+print out board (used ConnectFour platform)
+
 
 Objective of the Game:

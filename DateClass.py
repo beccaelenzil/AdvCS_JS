@@ -131,6 +131,7 @@ class Date:
             return "Invalid Input: N must be non-negative"
 
         for i in range(0,N):
+            print(self)
             self.yesterday()
         print(self)
 
@@ -204,6 +205,8 @@ class Date:
 
 
 #a = Date(1, 1, 1027)
+#print(a.subNDays(2))
+
 #a2 = Date(3, 28, 1027)
 #print(a.diff(a2))
 #print(a2.diff(a))

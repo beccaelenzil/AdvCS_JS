@@ -15,8 +15,8 @@ class Rational:
     def __eq__(self, other):
         return self.numerator * other.denominator == self.denominator *  other.numerator
 
-    #def __ge__(self, other):
-        #return self.numerator * other.denominator >= self.denominator * other.numerator
+    def __ge__(self, other):
+        return self.numerator * other.denominator >= self.denominator * other.numerator
 
     def __str__(self):
         return str(self.numerator) + "/" + str(self.denominator)
