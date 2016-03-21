@@ -1,0 +1,75 @@
+Here's the output of the tests I ran for your date class. Everything looks good except for a funny artifact in your diff and dow method.
+Take a look and try to figure out why it's returning that extra value.
+
+Correction -- now I realize that's just the time print out from the exercise we did in class. You're all good.
+
+Minor issue: your subNDays method should print out each date (just as your addNDays method does)
+
+Score: 9/9
+
+
+--------------------------------------
+date basics
+--------------------------------------
+11/12/2014 ==  11/12/2014
+11/12/2014 ==  11/12/2014
+d == d2 is False ==  False
+d and d2 have the same date is True ==  True
+
+d's id:  51985344
+d2's id:  52398880
+
+d2 is in a leap year is False ==  False
+
+d3:  01/01/2020
+d3 is in a leap year is True ==  True
+
+
+--------------------------------------
+tomorrow and yesterday test
+--------------------------------------
+12/31/2014 ==  12/31/2014
+1/1/2015 ==  01/01/2015
+1/1/2015 ==  01/01/2015
+12/31/2014 ==  12/31/2014
+02/29/2016 ==  02/29/2016
+3/1/2016 ==  03/01/2016
+02/29/2016 ==  02/29/2016
+
+subNDays test
+
+11/12/2014 through 11/15/2014
+11/12/2014
+11/13/2014
+11/14/2014
+11/15/2014
+
+print 11/15/2014 through 11/12/2014
+11/12/2014
+
+--------------------------------------
+isAfter test
+--------------------------------------
+True ==  True
+False ==  False
+False ==  False
+
+--------------------------------------
+diff test
+--------------------------------------
+24 ==  9.39999999972e-05
+24
+-24 ==  9.09999999976e-05
+-24
+0.000399999999999
+105 ==  105
+
+--------------------------------------
+dow test
+--------------------------------------
+Monday ==  0.084205
+Monday
+Monday ==  0.020823
+Monday
+Friday ==  0.073015
+Friday
