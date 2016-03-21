@@ -34,3 +34,4 @@ class Rational:
 d = Rational(10, 20)
 d.simplify()
 print(d)
+

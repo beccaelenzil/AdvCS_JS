@@ -1,5 +1,7 @@
 Game: Tic-Tac-Toe
 
-Game Play:
+Game Play (How the code works):
+General class is Board
+print out board
 
 Objective of the Game:
