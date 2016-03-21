@@ -216,4 +216,3 @@ class Date:
 
 #d = Date(11, 10, 2014)
 #print(d.dow())
-
