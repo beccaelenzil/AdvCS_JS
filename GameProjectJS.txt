@@ -1,8 +1,12 @@
 Game: Tic-Tac-Toe
 
 Game Play (How the code works):
-General class is Board
+General class is Board--makes board 3x3 (not changeable)
 print out board (used ConnectFour platform)
+add a move using self.data, calling row, column, and X or O; if the space is empty, place ox into that space
+addmove also checks if the space is full
+method win checks if a player has won by checking vertically, horizonally, diagonally
+across: for each row, if in that row all self.datas are the same, have won
 
 
 Objective of the Game:

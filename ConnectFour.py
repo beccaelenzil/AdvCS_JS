@@ -168,8 +168,8 @@ class Board:
                 nextChar = "X"
 
 d = Board(7, 6)
-#d.hostGame()
-
+d.hostGame()
+"""
 # Connect Four Tests
 
 print "---------------------------------------------"
@@ -289,3 +289,4 @@ print "I played with ________"
 print "Everything works!"
 print "or"
 print "It doesn't work"
+"""
