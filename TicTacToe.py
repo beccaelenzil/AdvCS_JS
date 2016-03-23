@@ -14,7 +14,7 @@ class Board:
         """
         H = 3 #because tic-tac-toe has a specific board
         W = 3
-        s = ''   # the string to return
+        s = ''
         for row in range(0, H):
             s += str(row) + '|'
             for col in range(0,W):
@@ -40,17 +40,38 @@ class Board:
         else:
             print "Space is full. Choose another one"
 
-    def win(self):
+    def win(self, ox):
     #need to check across, horizonally, vertically
-        for row in range(0, 3):
-            for col in range(0, 3):
+    #can be fragile because tic-tac-toe never changes the size of box
+        for row in range(0, 3): #across
+            if self.data[row][0] == ox and \
+                self.data[row][1] == ox and \
+                self.data[row][2] == ox:
+                    return True
+        for col in range(0, 3): #vertical
+            if self.data[0][col] == ox and \
+                self.data[1][col] == ox and \
+                self.data[2][col] == ox:
+                    return True
+        #diagonal from left upper corner
+        if self.data[0][0] == ox and \
+            self.data[1][1] == ox and \
+            self.data[2][2] == ox:
+                return True
+        #diagonal from right upper corner
+        elif self.data[0][2] == ox and \
+            self.data[1][1] == ox and \
+            self.data[2][0] == ox:
+                return True
+
+    def hostgame(self):
 
 
 
 d = Board()
 #column, row, ox
-d.addmove(1, 0, 'X')
-d.addmove(2, 0, 'X')
-d.addmove(0, 0, 'O')
-print(d.win())
+d.addmove(0, 2, 'X')
+d.addmove(1, 1, 'X')
+d.addmove(2, 0, 'O')
+print(d.win('X'))
 print(d)

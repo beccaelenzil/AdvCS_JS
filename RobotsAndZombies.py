@@ -98,7 +98,7 @@ class PlayerBot(GenericBot):
         self.forward()
 
 from visual import *
-from robot import *
+#from robot import *
 import random
 import math
 
@@ -129,3 +129,5 @@ def makeZombies():
         z = r * sin(math.radians(theta))
         zombies.append(ZombieBot(position = vector(x, 0, z)))
     return zombies
+
+z = ZombieBot()
