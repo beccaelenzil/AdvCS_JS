@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7775447-8d3c-4535-8802-442caebeb7d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RobotsAndZombies.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConnectFour.py" afterPath="$PROJECT_DIR$/ConnectFour.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameProjectJS.txt" afterPath="$PROJECT_DIR$/GameProjectJS.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TicTacToe.py" afterPath="$PROJECT_DIR$/TicTacToe.py" />
     </list>
     <ignored path="AdvCS_JS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,12 +66,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicTacToe.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TicTacToe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TicTacToe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8846154">
-              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RobotsAndZombies.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RobotsAndZombies.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53846157">
+              <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+              <folding>
+                <element signature="e#18#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,6 +151,7 @@
         <option value="$PROJECT_DIR$/ConnectFour.py" />
         <option value="$PROJECT_DIR$/TicTacToe.py" />
         <option value="$PROJECT_DIR$/GameProjectJS.txt" />
+        <option value="$PROJECT_DIR$/RobotsAndZombies.py" />
       </list>
     </option>
   </component>
@@ -203,7 +214,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.TicTacToe">
+  <component name="RunManager" selected="Python.RobotsAndZombies">
     <configuration default="false" name="DateClass" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,23 +228,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AdvCS_JS" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DateClass.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ConnectFour" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AdvCS_JS" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ConnectFour" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -285,6 +279,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AdvCS_JS" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TicTacToe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="RobotsAndZombies" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AdvCS_JS" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RobotsAndZombies.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -413,18 +424,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.DateClass" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ConnectFour" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.boxes2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.TicTacToe" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.boxes2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.TicTacToe" />
+      <item index="4" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.TicTacToe" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DateClass" />
-        <item index="3" class="java.lang.String" itemvalue="Python.boxes2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ConnectFour" />
+        <item index="0" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
+        <item index="1" class="java.lang.String" itemvalue="Python.TicTacToe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DateClass" />
+        <item index="4" class="java.lang.String" itemvalue="Python.boxes2" />
       </list>
     </recent_temporary>
   </component>
@@ -556,9 +567,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TicTacToe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8846154">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RobotsAndZombies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53846157">
+          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+          <folding>
+            <element signature="e#18#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
