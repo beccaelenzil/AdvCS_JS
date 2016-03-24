@@ -4,20 +4,20 @@ class Board:
 
     def __init__(self):
         """ the constructor for objects of type Board """
-        W = 3
-        H = 3
-        self.data = [ [' ']*W for row in range(H) ]
+        self.W = 3
+        self.H = 3
+        self.data = [ [' ']*self.W for row in range(self.H) ]
 
     def __repr__(self):
         """ this method returns a string representation
             for an object of type Board
         """
-        H = 3 #because tic-tac-toe has a specific board
-        W = 3
+        #H = 3 #because tic-tac-toe has a specific board
+        #W = 3
         s = ''
-        for row in range(0, H):
+        for row in range(0, self.H):
             s += str(row) + '|'
-            for col in range(0,W):
+            for col in range(0,self.W):
                 s += self.data[row][col] + '|'
                 #self.data is list of lists; row gives corresponding row
                 #col gives on item in column position in row
@@ -25,10 +25,10 @@ class Board:
                 #self.data[1] is a list that corresponds to second row
             s += '\n'
 
-        s += (2*W+1) * '-'    # bottom of the board
+        s += (2*self.W+1) * '-'    # bottom of the board
         s += "\n"
         count = 0
-        for col in range(0, W):
+        for col in range(0, self.W):
             s += " " + str(col) + ""
         return s       # the board is complete, return it
 
@@ -49,12 +49,12 @@ class Board:
     def win(self, ox):
     #need to check across, horizonally, vertically
     #can be fragile because tic-tac-toe never changes the size of box
-        for row in range(0, 3): #across
+        for row in range(0, self.H): #across
             if self.data[row][0] == ox and \
                 self.data[row][1] == ox and \
                 self.data[row][2] == ox:
                     return True
-        for col in range(0, 3): #vertical
+        for col in range(0, self.W): #vertical
             if self.data[0][col] == ox and \
                 self.data[1][col] == ox and \
                 self.data[2][col] == ox:
