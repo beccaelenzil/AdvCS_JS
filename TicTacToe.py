@@ -35,10 +35,16 @@ class Board:
     def addmove(self, col, row, ox):
     #for a user-given column and row, put x or o into it
     #if that space is full, prints Space is full
-        if self.data[row][col] == " ":
-            self.data[row][col] = ox
+        if ox == "X" or ox == "O":
+            if self.data[row][col] == " ":
+                self.data[row][col] = ox
+            else:
+                print "Space is full. Choose another one"
         else:
-            print "Space is full. Choose another one"
+            print "Choose X or O"
+
+    def allowmove(self, col, row, ox):
+        if ox
 
     def win(self, ox):
     #need to check across, horizonally, vertically
@@ -63,15 +69,35 @@ class Board:
             self.data[1][1] == ox and \
             self.data[2][0] == ox:
                 return True
-
+        else:
+            return False
+"""
     def hostgame(self):
-
-
+# addmove uses players input of column, row to make sure spot
+# is available then places player's ox in
+        first_char = "X"
+        while True:
+            player_col = input("It's " + first_char + "'s turn. Enter a column")
+            player_row = input("Enter a row.")
+            while self.allowsmove(player_col, player_row, first_char):
+                self.addmove(player_col, player_row, first_char)
+                if self.win(first_char):
+                    print first_char + " has won!"
+                    break
+                else:
+                    if first_char == "X":
+                        first_char = "O"
+                    else:
+                        first_char = "X"
+            if self.allowsmove(player_col, player_row, first_char == False:
+                return "Not a valid entry"
+"""
 
 d = Board()
+d.hostgame()
 #column, row, ox
-d.addmove(0, 2, 'X')
-d.addmove(1, 1, 'X')
-d.addmove(2, 0, 'O')
-print(d.win('X'))
+#d.addmove(0, 2, "X")
+#d.addmove(1, 1, 'X')
+#d.addmove(2, 0, 'O')
+#print(d.win('X'))
 print(d)
