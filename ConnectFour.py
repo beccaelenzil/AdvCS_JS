@@ -167,8 +167,8 @@ class Board:
             else:
                 nextChar = "X"
 
-d = Board(7, 6)
-d.hostGame()
+#d = Board(7, 6)
+#d.hostGame()
 """
 # Connect Four Tests
 

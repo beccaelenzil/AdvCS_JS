@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7775447-8d3c-4535-8802-442caebeb7d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/connect4Player.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TicTacToe.py" afterPath="$PROJECT_DIR$/TicTacToe.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConnectFour.py" afterPath="$PROJECT_DIR$/ConnectFour.py" />
     </list>
     <ignored path="AdvCS_JS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/ConnectFour.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="164" column="30" selection-start-line="164" selection-start-column="30" selection-end-line="164" selection-end-column="30" />
+              <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -66,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TicTacToe.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TicTacToe.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TicTacToe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53846157">
+            <state vertical-scroll-proportion="0.0">
               <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
               <folding />
             </state>
@@ -80,9 +81,21 @@
         <entry file="file://$PROJECT_DIR$/RobotsAndZombies.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#18#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connect4Player.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/connect4Player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5769231">
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,16 +106,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="boxes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/boxes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -148,10 +151,11 @@
         <option value="$PROJECT_DIR$/boxes2.py" />
         <option value="$PROJECT_DIR$/Rational.py" />
         <option value="$PROJECT_DIR$/DateClass.py" />
-        <option value="$PROJECT_DIR$/ConnectFour.py" />
         <option value="$PROJECT_DIR$/GameProjectJS.txt" />
         <option value="$PROJECT_DIR$/RobotsAndZombies.py" />
         <option value="$PROJECT_DIR$/TicTacToe.py" />
+        <option value="$PROJECT_DIR$/ConnectFour.py" />
+        <option value="$PROJECT_DIR$/connect4Player.py" />
       </list>
     </option>
   </component>
@@ -214,7 +218,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.TicTacToe">
+  <component name="RunManager" selected="Python.connect4Player">
     <configuration default="false" name="DateClass" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -249,23 +253,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="boxes2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AdvCS_JS" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/boxes2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -296,6 +283,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AdvCS_JS" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RobotsAndZombies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="connect4Player" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AdvCS_JS" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connect4Player.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -425,17 +429,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.DateClass" />
       <item index="1" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.boxes2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.TicTacToe" />
-      <item index="4" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
+      <item index="2" class="java.lang.String" itemvalue="Python.TicTacToe" />
+      <item index="3" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
+      <item index="4" class="java.lang.String" itemvalue="Python.connect4Player" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.TicTacToe" />
-        <item index="1" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.DateClass" />
-        <item index="4" class="java.lang.String" itemvalue="Python.boxes2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.connect4Player" />
+        <item index="1" class="java.lang.String" itemvalue="Python.TicTacToe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.RobotsAndZombies" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ConnectFour (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.DateClass" />
       </list>
     </recent_temporary>
   </component>
@@ -533,16 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RobotsAndZombies.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="e#18#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rational.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -567,19 +561,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConnectFour.py">
+    <entry file="file://$PROJECT_DIR$/TicTacToe.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="30" selection-start-line="164" selection-start-column="30" selection-end-line="164" selection-end-column="30" />
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TicTacToe.py">
+    <entry file="file://$PROJECT_DIR$/RobotsAndZombies.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53846157">
-          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConnectFour.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect4Player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
