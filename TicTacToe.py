@@ -44,7 +44,8 @@ class Board:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        if ox
+        #if full, print its full
+        if self.data[row][col]
 
     def win(self, ox):
     #need to check across, horizonally, vertically
