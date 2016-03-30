@@ -29,6 +29,8 @@ class Board:
         s += "\n"
         count = 0
         for col in range(0, self.W):
+            if col == 0:
+                s+= ' '
             s += " " + str(col) + ""
         return s       # the board is complete, return it
 
@@ -36,15 +38,15 @@ class Board:
     #for a user-given column and row, put x or o into it
     #if that space is full, prints Space is full
         if ox == "X" or ox == "O":
-            if self.data[row][col] == " ":
+            if self.data[row][col] == " ": # could you use allowmove here ?
                 self.data[row][col] = ox
             else:
-                print "Space is full. Choose another one"
+                print "Space is full. Choose another one" # are you sure you want to put this valid move checking logic in your addmove method, or maybe it should go into your hostGame()
         else:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        if col < 0 or row < 0 or col > 3 or row > 3:
+        if col < 0 or row < 0 or col > 3 or row > 3: # should it be > 3 or >= 3 ? - Becca
             return False
         elif self.data[row][col] != " ":
             return False
@@ -75,9 +77,10 @@ class Board:
             self.data[2][0] == ox:
                 return True
         else:
-            return False
+            return False # I think perhaps this should go one tab level back outside the else statement ?
 
 d = Board()
+print d
 
 #d.hostgame()
 #column, row, ox
