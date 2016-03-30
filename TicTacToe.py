@@ -46,7 +46,7 @@ class Board:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        if col < 0 or row < 0 or col > 3 or row > 3: # should it be > 3 or >= 3 ? - Becca
+        if col < 0 or row < 0 or col >= 3 or row >= 3: # should it be > 3 or >= 3 ? - Becca
             return False
         elif self.data[row][col] != " ":
             return False
@@ -79,8 +79,36 @@ class Board:
         else:
             return False # I think perhaps this should go one tab level back outside the else statement ?
 
+    def hostgame(self):
+#checklist:
+#move allowed; add; win; change turn
+
+#TO Fix
+#if user enters wrong number, will just repeat
+        nextChar = "X"
+        while True:
+            print(self)
+            person_col = -1
+            person_row = -1
+            while self.allowmove(person_col, person_row, nextChar) == False:
+                person_col = input("Player "+ nextChar + ": Enter a column")
+                person_row = input("Player " + nextChar + ": Enter a row")
+            if self.allowmove(person_col, person_row, nextChar):
+                self.addmove(person_col, person_row, nextChar)
+            if self.win(nextChar):
+                print(self)
+                print "Player " + nextChar + " has won!"
+                break
+            if nextChar == "X":
+                nextChar = "O"
+            elif nextChar == "O":
+                nextChar = "X"
+
+
 d = Board()
-print d
+#d.addmove(2, 2, "X")
+#print(d.allowmove(2, 2, "X"))
+print(d.hostgame())
 
 #d.hostgame()
 #column, row, ox

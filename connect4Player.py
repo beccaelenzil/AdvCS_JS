@@ -80,7 +80,7 @@ def playGame(playerX, playerO):
 
     # check for valid input, and instantiate the players
     if playerX == 'smart':
-        pX = smartPlayer('X')
+        pX = smartPlayer('X') #SELF.CHARACTER =
     elif playerX == 'basic':
         pX = basePlayer('X')
     elif playerX != 'human':
@@ -141,11 +141,7 @@ def playGame(playerX, playerO):
 
 
 
-
-#playGame("smart", "basic")
-
-
-numGames = 2
+numGames = 50
 oxTruce = [0, 0, 0]
 for i in range(numGames):
     winner = playGame("smart", "basic")
