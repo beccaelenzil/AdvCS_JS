@@ -74,9 +74,11 @@ class smartPlayer(basePlayer):
 
 
 def playGame(playerX, playerO):
+
     pO = playerO
     pX = playerX
 
+    # check for valid input, and instantiate the players
     if playerX == 'smart':
         pX = smartPlayer('X')
     elif playerX == 'basic':
@@ -96,10 +98,16 @@ def playGame(playerX, playerO):
     q = b(7,6)
     print q
 
-    nextChar = "X"
+
+    game_player = pX #I found the bug! We were setting game player to pX in the while loop, so that every time it looped through
+                    # the game_player was pX, even when we wanted it to be pO. Simple fix: move this statement outside of the while loop
+                    # because it's simply there to initialize your game player.
+                    # I also set next char equal to game_player.ox. This doesn't change anything, but should help eliminate bugs
+    nextChar = game_player.ox
+
+    #get the next play
     while True:
         print(q)
-        game_player = pX
         person_col = -1
         while q.allowsMove(person_col) == False:
             if game_player == "human":
@@ -109,6 +117,7 @@ def playGame(playerX, playerO):
             person_col = int(person_col)
         q.addMove(person_col, nextChar)   #adds character to board
 
+        #check for a win
         if q.winsFor(nextChar): #if char has won
             print q
             print(nextChar + " has won!")
@@ -116,18 +125,21 @@ def playGame(playerX, playerO):
                 return 0
             elif nextChar == 'X':
                 return 1
-
-        if q.isFull():
+        #check for a truce
+        elif q.isFull():
             print("The board is full. Game is over.")
             return 2
 
+        #switch the player
         if nextChar == "X":
             game_player = pO
-            nextChar = "O"
-
+            nextChar = game_player.ox
         else:
             game_player = pX
-            nextChar = "X"
+            nextChar = game_player.ox
+
+
+
 
 
 #playGame("smart", "basic")
