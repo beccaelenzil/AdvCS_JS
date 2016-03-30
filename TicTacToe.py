@@ -44,8 +44,12 @@ class Board:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        #if full, print its full
-        if self.data[row][col]
+        if col < 0 or row < 0 or col > 3 or row > 3:
+            return False
+        elif self.data[row][col] != " ":
+            return False
+        else:
+            return True
 
     def win(self, ox):
     #need to check across, horizonally, vertically
@@ -72,33 +76,12 @@ class Board:
                 return True
         else:
             return False
-"""
-    def hostgame(self):
-# addmove uses players input of column, row to make sure spot
-# is available then places player's ox in
-        first_char = "X"
-        while True:
-            player_col = input("It's " + first_char + "'s turn. Enter a column")
-            player_row = input("Enter a row.")
-            while self.allowsmove(player_col, player_row, first_char):
-                self.addmove(player_col, player_row, first_char)
-                if self.win(first_char):
-                    print first_char + " has won!"
-                    break
-                else:
-                    if first_char == "X":
-                        first_char = "O"
-                    else:
-                        first_char = "X"
-            if self.allowsmove(player_col, player_row, first_char == False:
-                return "Not a valid entry"
-"""
 
 d = Board()
-d.hostgame()
+
+#d.hostgame()
 #column, row, ox
 #d.addmove(0, 2, "X")
 #d.addmove(1, 1, 'X')
 #d.addmove(2, 0, 'O')
 #print(d.win('X'))
-print(d)
