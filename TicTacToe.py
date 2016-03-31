@@ -53,6 +53,11 @@ class Board:
         else:
             return True
 
+    def isFull(self):
+        for col in range(3):
+            for row in range(3):
+
+
     def win(self, ox):
     #need to check across, horizonally, vertically
     #can be fragile because tic-tac-toe never changes the size of box
@@ -84,31 +89,33 @@ class Board:
 #move allowed; add; win; change turn
 
 #TO Fix
-#if user enters wrong number, will just repeat
+#will continue even after someone has won
+#also, won't stop if board is completely full
         nextChar = "X"
         while True:
             print(self)
             person_col = -1
             person_row = -1
-            #still working on this!
-            while self.allowmove(person_col, person_row, nextChar) == False:
-                person_col = input("Player "+ nextChar + ": Enter a column")
-                if person_col >= 3 or person_col < 0:
-                    person_col = input("Please enter a column number between 0 and 2")
-                    person_row = input("Player " + nextChar + ": Enter a row")
-                    if person_row >= 3:
-                        person_row = input("Please enter a row number between 0 and 2")
-                        if self.allowmove(person_col, person_row, nextChar):
-                            self.addmove(person_col, person_row, nextChar)
-                        if self.win(nextChar):
-                            print(self)
-                            print "Player " + nextChar + " has won!"
-                            break
 
-                        if nextChar == "X":
-                            nextChar = "O"
-                        elif nextChar == "O":
-                            nextChar = "X"
+            while self.allowmove(person_col, person_row, nextChar) == False:
+                person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2")
+                person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2")
+                if self.allowmove(person_col, person_row, nextChar):
+                    self.addmove(person_col, person_row, nextChar)
+                elif self.data[person_row][person_col] != " ":
+                    person_col = input("Space is full! Choose another column.")
+                    person_row = input("Choose another row.")
+
+                if self.win(nextChar):
+                    print(self)
+                    print "Player " + nextChar + " has won!"
+                    break
+
+                print(self)
+                if nextChar == "X":
+                    nextChar = "O"
+                elif nextChar == "O":
+                    nextChar = "X"
 
 
 d = Board()
