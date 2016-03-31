@@ -90,19 +90,25 @@ class Board:
             print(self)
             person_col = -1
             person_row = -1
+            #still working on this!
             while self.allowmove(person_col, person_row, nextChar) == False:
                 person_col = input("Player "+ nextChar + ": Enter a column")
-                person_row = input("Player " + nextChar + ": Enter a row")
-            if self.allowmove(person_col, person_row, nextChar):
-                self.addmove(person_col, person_row, nextChar)
-            if self.win(nextChar):
-                print(self)
-                print "Player " + nextChar + " has won!"
-                break
-            if nextChar == "X":
-                nextChar = "O"
-            elif nextChar == "O":
-                nextChar = "X"
+                if person_col >= 3 or person_col < 0:
+                    person_col = input("Please enter a column number between 0 and 2")
+                    person_row = input("Player " + nextChar + ": Enter a row")
+                    if person_row >= 3:
+                        person_row = input("Please enter a row number between 0 and 2")
+                        if self.allowmove(person_col, person_row, nextChar):
+                            self.addmove(person_col, person_row, nextChar)
+                        if self.win(nextChar):
+                            print(self)
+                            print "Player " + nextChar + " has won!"
+                            break
+
+                        if nextChar == "X":
+                            nextChar = "O"
+                        elif nextChar == "O":
+                            nextChar = "X"
 
 
 d = Board()
