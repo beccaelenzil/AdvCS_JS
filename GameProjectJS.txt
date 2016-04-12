@@ -10,3 +10,4 @@ across: for each row, if in that row all self.datas are the same, have won
 
 
 Objective of the Game:
+Allow two players to play game and make game STOP when one guy wins or they tie

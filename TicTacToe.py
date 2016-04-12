@@ -46,7 +46,7 @@ class Board:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        if col < 0 or row < 0 or col >= 3 or row >= 3: # should it be > 3 or >= 3 ? - Becca
+        if col < 0 or row < 0 or col >= 3 or row >= 3:
             return False
         elif self.data[row][col] != " ":
             return False
@@ -56,7 +56,9 @@ class Board:
     def isFull(self):
         for col in range(3):
             for row in range(3):
-
+                if self.data[row][col] == " ":
+                    return False
+        return True
 
     def win(self, ox):
     #need to check across, horizonally, vertically
@@ -84,38 +86,44 @@ class Board:
         else:
             return False # I think perhaps this should go one tab level back outside the else statement ?
 
+
     def hostgame(self):
-#checklist:
-#move allowed; add; win; change turn
 
 #TO Fix
-#will continue even after someone has won
-#also, won't stop if board is completely full
+#if player inputs letter, crashes
+
         nextChar = "X"
         while True:
             print(self)
-            person_col = -1
-            person_row = -1
+            #person_col = -1
+            #person_row = -1
 
-            while self.allowmove(person_col, person_row, nextChar) == False:
+            person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2")
+            person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2")
+
+            while self.allowmove(person_col, person_row, nextChar) == False: #if player inputs a full space
+                print ("Choose an open space.")
                 person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2")
                 person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2")
-                if self.allowmove(person_col, person_row, nextChar):
-                    self.addmove(person_col, person_row, nextChar)
-                elif self.data[person_row][person_col] != " ":
-                    person_col = input("Space is full! Choose another column.")
-                    person_row = input("Choose another row.")
 
-                if self.win(nextChar):
-                    print(self)
-                    print "Player " + nextChar + " has won!"
-                    break
+            self.addmove(person_col, person_row, nextChar) #adds move using column and row given by user
 
+            if self.win(nextChar): #if a player wins, tells them and stops
                 print(self)
+                print "Player " + nextChar + " has won!"
+                break
+
+            elif self.isFull(): #if the board is filled up completely, tells them and stops
+                print("The game is tied!")
+                break
+
+            else: #switches player
                 if nextChar == "X":
                     nextChar = "O"
                 elif nextChar == "O":
                     nextChar = "X"
+
+
 
 
 d = Board()
@@ -129,3 +137,18 @@ print(d.hostgame())
 #d.addmove(1, 1, 'X')
 #d.addmove(2, 0, 'O')
 #print(d.win('X'))
+
+'''
+d = Board()
+d.addmove(0, 1, "X")
+d.addmove(1, 1, "X")
+d.addmove(2, 1, "X")
+d.addmove(0, 2, "O")
+d.addmove(0, 0, "O")
+d.addmove(2, 2, "O")
+d.addmove(1, 2, "O")
+d.addmove(1, 0, "O")
+d.addmove(2, 0, "O")
+print(d)
+print(d.isFull())
+'''
