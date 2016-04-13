@@ -46,14 +46,14 @@ class Board:
             print "Choose X or O"
 
     def allowmove(self, col, row, ox):
-        if col < 0 or row < 0 or col >= 3 or row >= 3:
+        if col < 0 or row < 0 or col >= 3 or row >= 3: #column and rows can only be within range of tic-tac-toe board
             return False
         elif self.data[row][col] != " ":
             return False
         else:
             return True
 
-    def isFull(self):
+    def isFull(self): #Returns True if the entire board is filled
         for col in range(3):
             for row in range(3):
                 if self.data[row][col] == " ":
@@ -88,18 +88,33 @@ class Board:
 
 
     def hostgame(self):
-
-#TO Fix
-#if player inputs letter, crashes
-
         nextChar = "X"
         while True:
             print(self)
-            #person_col = -1
-            #person_row = -1
 
-            person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2")
-            person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2")
+            person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2")
+
+            while person_col.isdigit() == False: #if player input is not a number
+                person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2")
+                if person_col.isdigit() == True:
+                    person_col = int(person_col)
+                    break #stops since it no longer needs to be in this loop; it can go to the next thing
+                else:
+                    person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2") #this repeats until the player enters something correct
+
+            person_col = int(person_col) #turns person_col into an integer since raw_input is a string
+
+            person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+
+            while person_row.isdigit() == False:
+                person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+                if person_row.isdigit() == True:
+                    person_row = int(person_row)
+                    break
+                else:
+                    person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+
+            person_row = int(person_row)
 
             while self.allowmove(person_col, person_row, nextChar) == False: #if player inputs a full space
                 print ("Choose an open space.")
@@ -123,6 +138,19 @@ class Board:
                 elif nextChar == "O":
                     nextChar = "X"
 
+#AI:
+
+class player():
+    #a basic (dumb) player for tic-tac-toe
+    def __init__(self, char):
+        self.char = char
+
+    def __repr__(self):
+        #creates a string
+        q = "Basic player for " + self.char
+        return q
+
+    def randmove(self):
 
 
 
