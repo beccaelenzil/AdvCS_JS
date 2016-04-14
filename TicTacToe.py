@@ -151,7 +151,10 @@ class player():
         return q
 
     def randmove(self):
-
+        col = -1
+        while b.allowsMove(col) == False:
+            col = random.randrange(b.width)
+        return col
 
 
 d = Board()
