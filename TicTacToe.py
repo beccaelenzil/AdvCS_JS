@@ -1,3 +1,5 @@
+import random
+
 class Board:
     """ a datatype representing a 3x3 board of rows and columns
     """
@@ -92,44 +94,46 @@ class Board:
         while True:
             print(self)
 
-            person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2")
+            person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2 \n")
 
             while person_col.isdigit() == False: #if player input is not a number
-                person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2")
+                person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2 \n")
                 if person_col.isdigit() == True:
                     person_col = int(person_col)
                     break #stops since it no longer needs to be in this loop; it can go to the next thing
                 else:
-                    person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2") #this repeats until the player enters something correct
+                    print("Please enter a number!")
+                    person_col = raw_input("Player "+ nextChar + ": Enter a column between 0 and 2 \n") #this repeats until the player enters something correct
 
             person_col = int(person_col) #turns person_col into an integer since raw_input is a string
 
-            person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+            person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2 \n")
 
             while person_row.isdigit() == False:
-                person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+                person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2 \n")
                 if person_row.isdigit() == True:
                     person_row = int(person_row)
                     break
                 else:
-                    person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2")
+                    print("Please Enter a number!")
+                    person_row = raw_input("Player " + nextChar+ ": Enter a row between 0 and 2 \n")
 
             person_row = int(person_row)
 
             while self.allowmove(person_col, person_row, nextChar) == False: #if player inputs a full space
                 print ("Choose an open space.")
-                person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2")
-                person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2")
+                person_col = input("Player "+ nextChar + ": Enter a column between 0 and 2 \n")
+                person_row = input("Player " + nextChar+ ": Enter a row between 0 and 2 \n")
 
             self.addmove(person_col, person_row, nextChar) #adds move using column and row given by user
 
             if self.win(nextChar): #if a player wins, tells them and stops
                 print(self)
-                print "Player " + nextChar + " has won!"
+                print "Player " + nextChar + " has won! \n"
                 break
 
             elif self.isFull(): #if the board is filled up completely, tells them and stops
-                print("The game is tied!")
+                print("The game is tied! \n")
                 break
 
             else: #switches player
@@ -139,22 +143,43 @@ class Board:
                     nextChar = "X"
 
 #AI:
-
-class player():
+#needs to use hostgame to create new host function to play with human vs computer or computer vs computer or human vs human
+class basic_player():
     #a basic (dumb) player for tic-tac-toe
+
     def __init__(self, char):
         self.char = char
 
     def __repr__(self):
-        #creates a string
-        q = "Basic player for " + self.char
-        return q
+        s = "Basic player for " + self.char + "\n"
+        return s
 
-    def randmove(self):
+    def randmove(self,d):
         col = -1
-        while b.allowsMove(col) == False:
-            col = random.randrange(b.width)
+        while d.allowsMove(col) == False:
+            col = random.randrange(width)
         return col
+
+def playgame(playerX, playerO):
+
+    pX = playerX
+    pO = playerO
+
+    if playerX == "basic":
+        pX = basic_player("X")
+    elif playerX != "human":
+        print("Player should be basic or human.")
+
+    if playerO == "basic":
+        pO = basic_player("O")
+    elif playerO != "human":
+        print("Player should be basic or human.")
+
+    game_player = pX
+    nextChar = game_player.char
+
+    #get the next play
+
 
 
 d = Board()
