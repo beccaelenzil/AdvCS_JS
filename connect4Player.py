@@ -109,7 +109,7 @@ def playGame(playerX, playerO):
     while True:
         print(q)
         person_col = -1
-        while q.allowsMove(person_col) == False:
+        while not q.allowsMove(person_col):
             if game_player == "human":
                 person_col = input("It's " + nextChar + "s turn. Enter a column: ")
             else:
