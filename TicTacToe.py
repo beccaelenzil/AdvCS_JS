@@ -233,7 +233,7 @@ def play_game(player_x, player_o):
 
 
 
-play_game("basic", "basic")
+#play_game("basic", "basic")
 
 
 #d.addmove(2, 2, "X")
