@@ -71,28 +71,17 @@ print(ave_iter1)
 '''
 
 def insertionSort(list):
-    index = 0
-    sorted_element = list[0]
 
-    for i in range(index, len(list)): #for each unsorted item in list
-        if list[i+1] < sorted_element: #if the right element is less than the left element
-            list[i+1], sorted_element = sorted_element, list[i+1] #"bubble" down
-        else:
-
-        index += 1
-
-
-        #if list[i+1] < list[i]: #if the item to the right is smaller than the item to the lift
-            #list[i+1], list[i] = list[i], list[i+1]
+    for i in range(1, len(list)): #for each unsorted item in list
+        while i > 0 and list[i-1] > list[i]: #so it only bubbles down until it reaches the correct spot
+            print(list)
+            list[i], list[i-1] = list[i-1], list[i] #"bubble" down
+            i -= 1
+        display(list)
+    return list
 
 
-            #for q in range(i): #for q in range of the location of list[i]
-               # if list[i+1] < list[q]: #if our char is less than the char that's there
-
-
-
-
-
+print(insertionSort([4, 3, 2, 1]))
 
 
 
