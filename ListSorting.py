@@ -81,9 +81,29 @@ def insertionSort(list):
     return list
 
 
-print(insertionSort([4, 3, 2, 1]))
+#print(insertionSort([4, 3, 2, 1]))
 
+def quickSort(alist, start, stop):
+    if stop - start < 1:
+        return alist
+    else:
+        left = start
+        right = stop
+        pivot = alist[0]
+        while left <= right:
+            while alist[left] < pivot:
+                left += 1
+            while alist[right] > pivot:
+                right -= 1
+            if left <= right:
+                alist[right], alist[left] = alist[left], alist[right]
+                left += 1
+                right -= 1
+                print(alist)
+        quickSort(alist, start, right)
+        quickSort(alist, left, stop)
 
+quickSort([3, 5, 9, 1], 0, 3)
 
 
 
