@@ -89,22 +89,58 @@ def quickSort(alist, start, stop):
     else:
         left = start
         right = stop
-        pivot = alist[0]
+        pivot = alist[start]
         while left <= right:
             while alist[left] < pivot:
                 left += 1
             while alist[right] > pivot:
                 right -= 1
             if left <= right:
-                alist[right], alist[left] = alist[left], alist[right]
+                alist[left], alist[right] = alist[right], alist[left]
                 left += 1
                 right -= 1
                 print(alist)
         quickSort(alist, start, right)
         quickSort(alist, left, stop)
 
-quickSort([3, 5, 9, 1], 0, 3)
+    return #alist
 
+#print(quickSort([3, 10, 1, 5, 9, 1, 8], 0, 6))
 
+def mergeSort(alist):
+    if len(alist) > 1:
+        mid = len(alist)//2 #middle of alist
+        right_side = alist[:mid]
+        left_side = alist[mid:]
+#then recursively sorts until every element has length 1; so for 5-element list, have 5 different little lists?
+        mergeSort(right_side)
+        mergeSort(left_side) #goes until len(alist) <= 1
+
+        i = 0
+        j = 0
+        k = 0
+        #Compares values at i-index for left and right, then if for larger value, moves to new list at index k
+        #Keeps going until there are no more values in left or right
+
+        while i < len(left_side) and j < len(right_side):
+            if left_side[i] < right_side[j]: #if the first value of left is less than that of the right
+                alist[k] = left_side[i] #take value from left_side and add to new list at index k
+                i += 1
+            else:
+                alist[k]=right_side[j]
+                j=j+1
+            k=k+1
+
+        while i < len(left_side):
+            alist[k]=left_side[i]
+            i=i+1
+            k=k+1
+
+        while j < len(right_side):
+            alist[k]=right_side[j]
+            j=j+1
+            k=k+1
+
+    print(alist)
 
 
